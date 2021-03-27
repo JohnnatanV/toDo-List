@@ -86,6 +86,8 @@ function filterTodo(e) {
   });
 }
 
+function checkTodos() {}
+
 function saveLocalTodos(todo) {
   //CHECK
   let todos;
