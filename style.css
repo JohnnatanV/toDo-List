@@ -43,6 +43,45 @@ form button:hover {
   color: white;
 }
 
+/* SELECT */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #009fff;
+  width: 10rem;
+  cursor: pointer;
+  padding: 0.7rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #ec2f4b;
+  top: 0;
+  right: 0;
+  padding: 0.55rem;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  background: white;
+  color: #ec2f4b;
+  transition: all 0.5s ease;
+}
+
+/* TODO LIST */
 .todo-container {
   display: flex;
   justify-content: center;
@@ -101,40 +140,4 @@ form button:hover {
 .fall {
   transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  border: none;
-}
-
-.select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-select {
-  color: #009fff;
-  width: 10rem;
-  cursor: pointer;
-  padding: 0.7rem;
-}
-
-.select::after {
-  content: "\25BC";
-  position: absolute;
-  background: #ec2f4b;
-  top: 0;
-  right: 0;
-  padding: 0.55rem;
-  pointer-events: none;
-}
-
-.select:hover::after {
-  background: white;
-  color: #ec2f4b;
 }

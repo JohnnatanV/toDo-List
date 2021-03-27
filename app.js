@@ -86,16 +86,19 @@ function filterTodo(e) {
   });
 }
 
-function checkTodos() {}
-
-function saveLocalTodos(todo) {
-  //CHECK
-  let todos;
+//Reusable function for CHECK
+function checkTodos() {
   if (localStorage.getItem("todos") === null) {
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
+  return todos;
+}
+
+function saveLocalTodos(todo) {
+  //CHECK
+  checkTodos();
 
   todos.push(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -103,12 +106,7 @@ function saveLocalTodos(todo) {
 
 function getTodos() {
   //CHECK
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
+  checkTodos();
 
   todos.forEach((todo) => {
     //Todo DIV
@@ -137,12 +135,7 @@ function getTodos() {
 
 function removeLocalTodos(todo) {
   //CHECK
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
+  checkTodos();
 
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex), 1);
